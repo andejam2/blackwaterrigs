@@ -1,95 +1,96 @@
+import Link from "next/link";
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <main className="mx-auto max-w-5xl px-4 py-20">
+      {/* HERO */}
+      <section className="text-center">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/BlackwaterRigsLogo.png"
+          alt="Blackwater Rigs"
+          width={450}
+          height={120}
           priority
+          className="mx-auto mb-6"
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <h1 className="sr-only">Blackwater Rigs</h1>
+        <p className="mt-4 text-lg text-gray-600">
+          Tough, snag-smart catfish rigs and dragging weights that hold in current.
+        </p>
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <Link
+            href="/shop"
+            className="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            Shop rigs
+          </Link>
+          <Link
+            href="/about"
+            className="px-5 py-3 rounded-lg border hover:bg-gray-50"
           >
-            Read our docs
-          </a>
+            About us
+          </Link>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* VALUE PROPS (no shopping on the homepage) */}
+      <section className="mt-16 grid gap-6 sm:grid-cols-3">
+        <div className="rounded-xl border p-6">
+          <h3 className="font-semibold">Snag-smart design</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Built to slide through rock and brush so you can focus on the bite.
+          </p>
+        </div>
+        <div className="rounded-xl border p-6">
+          <h3 className="font-semibold">Made for current</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Rigs and weights that track straight and stay down in heavy flows.
+          </p>
+        </div>
+        <div className="rounded-xl border p-6">
+          <h3 className="font-semibold">Field-tested</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Real-water tested, dialed for casts, drifts, and long pulls.
+          </p>
+        </div>
+      </section>
+
+      {/* IMAGE BANNER (optional, non-shopping) */}
+      <section className="mt-16">
+        <div className="aspect-[16/7] w-full overflow-hidden rounded-2xl bg-gray-100">
+          <img
+            src="/productimages/4packPlaceHolder.jpg"
+            alt="Blackwater Rigs gear"
+            className="h-full w-full object-cover"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <p className="mt-3 text-center text-sm text-gray-500">
+          Gear you can abuse. Results you can trust.
+        </p>
+      </section>
+
+      {/* CTA STRIP */}
+      <section className="mt-16 rounded-xl border p-6 flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-semibold">Ready to rig up?</h2>
+          <p className="text-gray-600">Browse the lineup or get in touch.</p>
+        </div>
+        <div className="flex gap-3">
+          <Link
+            href="/shop"
+            className="px-5 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+          >
+            Browse shop
+          </Link>
+          <Link
+            href="/contact"
+            className="px-5 py-3 rounded-lg border hover:bg-gray-50"
+          >
+            Contact
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
